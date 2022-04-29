@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.linting.flake8Enabled": true,
+		"python.linting.enabled": false,
+		"python.formatting.provider": "black",
+		"editor.formatOnSave": true
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "odoo15e",
+				"type": "python",
+				"request": "launch",
+				"reAttach": true,
+				"url": "http://localhost:8069/web",
+				"stopOnEntry": false,
+				"program": "${workspaceRoot}/odoo/odoo-bin",
+				"args": [
+					"--config=${workspaceRoot}/odoo.conf",
+					"--dev=all",
+					//"--update=masheal_customization"
+				],
+				"cwd": "${workspaceRoot}",
+				"console": "integratedTerminal",
+			}
+		],
+		"compounds": []
+	}
+}
