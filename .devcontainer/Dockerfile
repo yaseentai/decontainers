@@ -8,10 +8,6 @@ ENV PYTHONUNBUFFERED 1
 ARG NODE_VERSION="none"
 RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
-# [Optional] If your requirements rarely change, uncomment this section to add them to the image.
-# COPY requirements.txt /tmp/pip-tmp/
-# RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
-#    && rm -rf /tmp/pip-tmp
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && apt-get -y install python3-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev \
@@ -20,8 +16,11 @@ RUN apt-get update && apt-get -y install python3-dev libxml2-dev libxslt1-dev li
 
 RUN sudo npm install -g rtlcss
 
-RUN pip3 install setuptools wheel
-# RUN pip3 install -r odoo/requirements.txt
+RUN pip3 install setuptools wheel black inotify
 
+# [Optional] If your requirements rarely change, uncomment this section to add them to the image.
+COPY requirements.txt /tmp/pip-tmp/
+RUN pip3 --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
+    && rm -rf /tmp/pip-tmp
 
 
