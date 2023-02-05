@@ -22,7 +22,7 @@
 				"args": [
 					// "--config=${workspaceRoot}/odoo.conf",
 					// "--dev=all",
-					// "--update=masheal_customization"
+					// "--update=base"
 				],
 				"cwd": "${workspaceRoot}",
 				"console": "integratedTerminal",
