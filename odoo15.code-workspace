@@ -14,17 +14,15 @@
 		"version": "0.2.0",
 		"configurations": [
 			{
-				"name": "odoo15e",
+				"name": "odoo15",
 				"type": "python",
 				"request": "launch",
-				"reAttach": true,
-				"url": "http://localhost:8069/web",
 				"stopOnEntry": false,
 				"program": "${workspaceRoot}/odoo/odoo-bin",
 				"args": [
-					"--config=${workspaceRoot}/odoo.conf",
-					"--dev=all",
-					//"--update=masheal_customization"
+					// "--config=${workspaceRoot}/odoo.conf",
+					// "--dev=all",
+					// "--update=masheal_customization"
 				],
 				"cwd": "${workspaceRoot}",
 				"console": "integratedTerminal",

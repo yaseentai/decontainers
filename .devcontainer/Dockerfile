@@ -14,7 +14,7 @@ RUN apt-get update && apt-get -y install python3-dev libxml2-dev libxslt1-dev li
     libtiff5-dev libjpeg62-turbo-dev libopenjp2-7-dev zlib1g-dev libfreetype6-dev \
     liblcms2-dev libwebp-dev libharfbuzz-dev libfribidi-dev libxcb1-dev libpq-dev git npm postgresql-client
 
-RUN sudo npm install -g rtlcss
+RUN sudo npm install -g less lessc rtlcss
 
 RUN pip3 install setuptools wheel black inotify
 
